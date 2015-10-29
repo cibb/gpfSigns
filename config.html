@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>__MSG_name__ ~ __MSG_config_page__</title>
+    
+    
+    
+    <link rel="stylesheet" href="css/config.css" />
+    <link rel="stylesheet" href="css/datatables.min.css" />
+        <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #eee;
+}
+
+h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+main {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before {
+  content: '\f1cb';
+}
+
+label[for*='2']:before {
+  content: '\f17d';
+}
+
+label[for*='3']:before {
+  content: '\f16b';
+}
+
+label[for*='4']:before {
+  content: '\f1a9';
+}
+
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+
+    </style>
+
+    
+        <script src="js/prefixfree.min.js"></script>      
+
+    
+  </head>
+
+  <body>
+
+    <h1>__MSG_name__ ~ __MSG_config_page__</h1>
+
+<main>
+  
+  <input id="tab1" type="radio" name="tabs" checked style="display: none">
+  <label for="tab1">__MSG_signs__</label>
+    
+  <input id="tab2" type="radio" name="tabs" style="display: none">
+  <label for="tab2">__MSG_links__</label>
+
+  <input id="tab3" type="radio" name="tabs" style="display: none">
+  <label for="tab3">__MSG_thanks__</label>  
+        
+  <section id="content1">
+    <div id="createNewBtn">
+      __MSG_createNew__
+    </div>
+    <div style="clear: both"></div>
+    <div id="newSignBox" style="height: 0px;">    
+      <div id="taIn">
+        __MSG_shortName__: <input type="text" id="inpName" >
+      </div>  
+      <div id="taIn">
+        __MSG_display__: <select id="before"><option id="false">__MSG_afterText__</option><option id="true">__MSG_beforeText__</option></select>
+      </div>        
+      <div id="editor">
+        <textarea id="input"></textarea>      
+      </div>
+      <button id="addSigns">__MSG_addSignToList__</button>
+    </div>
+
+    <div id="yourSigns">
+      <h2>__MSG_yourSigns__</h2>
+
+
+<table id="dtable" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>__MSG_shortName__</th>
+                <th>__MSG_timeUsed__</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>__MSG_shortName__</th>
+                <th>__MSG_timeUsed__</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+        </tbody>
+    </table>
+
+
+
+
+
+    </div>    
+  </section>
+    
+  <section id="content2">
+    <p>
+      __MSG_coomingsoon__
+    </p>
+  </section>
+    
+  <section id="content3">
+    <p>__MSG_thanksText__</p>
+  </section>
+    
+  <section id="content4">
+    <p>Cooming soon</p>
+  </section>
+    
+</main>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/datatables.min.js"></script>
+  <script src="js/jquery.cleditor.min.js"></script>
+  <script src="js/config.js"></script>
+  </body>
+</html>

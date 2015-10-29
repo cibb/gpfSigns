@@ -1,0 +1,78 @@
+{
+   "name": {
+      "message": "Firmas GPF"
+   },
+   "descr": {
+      "message": "Esta extensión te permite agregar firmas en tus mensajes de GPF de una forma rápida y sencilla."
+   },
+
+	"my_links" : {
+		"message" : "Mis Links"
+	},
+	"add_sign" : {
+		"message" : "Insertar firma"
+	},
+	"config" : {
+		"message" : "Configurar"
+	},	 
+   "config_page" : {
+      "message" : "Página de configuracion"
+   }, 
+  "coomingsoon" : {
+    "message" : "Muy pronto"
+  }, 
+  "createNew": {
+    "message" : "Crear nuevo"
+  },
+  "shortName":{
+    "message" : "Nombre corto"
+  },  
+  "display":{
+    "message" : "Aparecerá"
+  },  
+  "afterText":{
+    "message":"Después del texto ya escrito"
+  },
+  "beforeText":{
+    "message":"Antes del texto ya escrito"
+    },  
+  "addSignToList":{
+    "message":"Guardar"
+    },
+  "savedSignDone":{
+    "message":"Tu firma fue guardada con éxito!"
+  },
+  "yourSigns":{
+    "message":"Tus firmas"
+  },
+  "signs":{
+      "message": "Firmas"
+    },
+  "links":{
+      "message": "Enlaces"
+    },  
+   "thanks":{
+      "message": "Agradecimientos"
+    }, 
+  "thanksText" :{
+    "message" : "- Gracias a <a href=\"http://avm99963.tk/\">avm99963</a> por toda la ayuda brindada.</p><p>- Gracias a todo el grupo de <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> por testear y usar la app."
+  },    
+   "error_no_gpf_tab": {
+   		"message" : "Oops! No puedes insertar una firma en esta pesta\u00f1a! Ingresa a una de GPF!"
+   },
+   "error_no_signs":{
+   		"message" : "Aun no tiene ninguna firma creada. ¡Es hora de <a id=\"aConf\">crear una!</a>"
+   },
+   "error_haha":{
+         "message" : "jaja, esa opcion no está disponible"
+   },
+   "timeUsed":{
+      "message" : "Veces usada"
+   },
+   "actions":{
+      "message" : "Acciones"
+   },      
+   "errorNamelenght" :{
+        "message" : "Oops! Olvidaste ingresar un nombre o es muy largo (Debe estar entre 3 y 30 caracteres)"
+   }   
+}

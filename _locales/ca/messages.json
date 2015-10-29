@@ -1,0 +1,78 @@
+{
+   "name": {
+      "message": "Signatures GPF"
+   },
+   "descr": {
+      "message": "Aquesta extensió et permet afegir signatures als teus missatges dels GPF d'una forma ràpida y senzilla."
+   },
+
+	"my_links" : {
+		"message" : "Els meus Links"
+	},
+	"add_sign" : {
+		"message" : "Insertar signatura"
+	},
+	"config" : {
+		"message" : "Configurar"
+	},	 
+   "config_page" : {
+      "message" : "Pàgina de configuració"
+   }, 
+  "coomingsoon" : {
+    "message" : "Molt aviat"
+  }, 
+  "createNew": {
+    "message" : "Crear nou"
+  },
+  "shortName":{
+    "message" : "Nom curt"
+  },  
+  "display":{
+    "message" : "Apareixarà"
+  },  
+  "afterText":{
+    "message":"Després del text ja escrit"
+  },
+  "beforeText":{
+    "message":"Abans del text ja escrit"
+    },  
+  "addSignToList":{
+    "message":"Desar"
+    },
+  "savedSignDone":{
+    "message":"La teva signatura s'ha desat amb èxit!"
+  },
+  "yourSigns":{
+    "message":"Les teves signatures"
+  },
+  "signs":{
+      "message": "Signatures"
+    },
+  "links":{
+      "message": "Enllaços"
+    },  
+   "thanks":{
+      "message": "Agraïments"
+    }, 
+  "thanksText" :{
+    "message" : "- Gràcies a <a href=\"http://avm99963.tk/\">avm99963</a> per tota la seva ajuda.</p><p>- Gràcies a tot el grup de <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> per provar i utilitzar l'app."
+  },    
+   "error_no_gpf_tab": {
+   		"message" : "Oops! No pots insertar una signatura en aquesta pestanya! Obre una dels GPF!"
+   },
+   "error_no_signs":{
+   		"message" : "Encara no té ninguna signatura creada. És hora de <a id=\"aConf\">crear una</a>!"
+   },
+   "error_haha":{
+         "message" : "jaja, aquesta opció no està disponible"
+   },
+   "timeUsed":{
+      "message" : "Vegades utilitzada"
+   },
+   "actions":{
+      "message" : "Accions"
+   },      
+   "errorNamelenght" :{
+        "message" : "Aiix! T'has olvidat de possar un nom o és massa llarg (ha d'estar entre 3 i 30 caràcters)"
+   }   
+}

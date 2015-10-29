@@ -9,10 +9,11 @@ chrome.extension.onMessage.addListener(function (message, sender, sendResponse) 
             var myText = message.text;
 
             var link = "";
-            if (message.tab.url.indexOf(";") == -1)
-                link = message.tab.url;
+
+            if (document.location.href.indexOf(";") == -1)
+                link = document.location.href;
             else {
-                var linkAux = message.tab.url.split(';');
+                var linkAux = document.location.href.split(';');
                 link = linkAux[0];
             }
 

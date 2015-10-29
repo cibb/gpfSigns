@@ -37,8 +37,13 @@ if (typeof localStorage.signs == 'undefined' || AuxLocal.length < 1) {
 }
 
 document.getElementById("exe").addEventListener("click", function () {
-    chrome.tabs.getCurrent(function (tab) {
-        if (tab.url.indexOf("productforums.google.com") == -1) {
+    chrome.tabs.query({
+        currentWindow: true,
+        active: true,
+        url: "https://productforums.google.com/*"
+    }, function (tab) {
+        console.log(tab);
+        if (tab.length < 1) {
             alert(chrome.i18n.getMessage("error_no_gpf_tab"));
             return;
         }
@@ -49,9 +54,9 @@ document.getElementById("exe").addEventListener("click", function () {
         }
         var sitem = AuxLocal[$("#lstSigns").children(":selected").attr("value")];
         AuxLocal[$("#lstSigns").children(":selected").attr("value")].used++;
-        chrome.tabs.sendMessage(tab.id, {
+        chrome.tabs.sendMessage(tab[0].id, {
             type: "addSign",
-            tab: tab,
+            tab: tab[0],
             text: sitem.message,
             "post": sitem.post
         });

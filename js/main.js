@@ -42,7 +42,6 @@ document.getElementById("exe").addEventListener("click", function () {
         active: true,
         url: "https://productforums.google.com/*"
     }, function (tab) {
-        console.log(tab);
         if (tab.length < 1) {
             alert(chrome.i18n.getMessage("error_no_gpf_tab"));
             return;

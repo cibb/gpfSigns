@@ -19,7 +19,7 @@
     "message" : "Config Page"
   },
   "coomingsoon" : {
-    "message" : "Cooming Soon"
+    "message" : "Coming Soon"
   },  
   "createNew": {
     "message" : "Create new"
@@ -28,13 +28,13 @@
     "message" : "Short name"
   },
   "display":{
-    "message" : "This should by"
+    "message" : "This will show"
   },
   "afterText":{
-    "message":"After the text writed"
+    "message":"After the text written"
   },  
   "beforeText":{
-    "message":"Before the text writed"
+    "message":"Before the text written"
     },
   "addSignToList":{
     "message":"Save"
@@ -52,27 +52,27 @@
       "message": "Links"
     },    
   "thanks":{
-      "message": "tanks"
+      "message": "Thanks"
     },    
   "thanksText" :{
-    "message" : "- Thanks to <a href=\"http://avm99963.tk/\">avm99963</a> for his support.</p><p>- Thanks to all the <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> group for test the app and use it."
+    "message" : "- Thanks to <a href=\"http://avm99963.tk/\">avm99963</a> for his support.</p><p>- Thanks to all the <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> group for testing the app and use it."
   },
    "error_no_gpf_tab": {
-   		"message" : "Oops! Yo can't insert a sign in the actual tab! Please, go to a GPF tab!"
+   		"message" : "Oops! Yo can't insert a sign into the actual tab! Please, go to a GPF tab!"
    },
     "error_no_signs":{
-   		"message" : "You dont have signs yet. ¡Its time to <a id=\"aConf\">create one!</a>"
+   		"message" : "You dont have any signs yet. Its time to <a id=\"aConf\">create one</a>!"
    },
     "error_haha":{
-         "message" : "haha, this option its not available"
+         "message" : "haha, this option is not available"
    },
    "timeUsed":{
-      "message" : "Time used"
+      "message" : "Times used"
    },
    "actions":{
       "message" : "Actions"
    },  
    "errorNamelenght" :{
-        "message" : "Oops! You missed insert a name, or your name its too long (This must be between 3 and 30 characters)"
+        "message" : "Oops! You either forgot to insert a name, or it is too long (it must be between 3 and 30 characters long)"
    }
 }

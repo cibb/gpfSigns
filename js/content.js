@@ -16,7 +16,11 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     			link = linkAux[0];
     		}
 
-            customerName = document.getElementsByClassName("NUXPAI-E-e")[0].getElementsByTagName("span")[0].innerText
+            if (window.hadfield_standalone) {
+                customerName = document.getElementsByClassName("NUXPAI-E-e")[0].getElementsByTagName("span")[0].innerText;
+            } else {
+                customerName = document.querySelector("._username span").innerText;
+            }
 
             myText = myText.replace("{{topicLink}}",link);
             myText = myText.replace("{{userName}}",customerName);

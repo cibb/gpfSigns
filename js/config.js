@@ -1,3 +1,13 @@
+var mySigns;
+var table;
+
+if (!(mySigns = getFromLocal()))
+    if(!(mySigns = getFromGoogle())){
+        mySigns = [];
+    }else{
+        saveInLocal(mySigns);
+    }
+    
 function localizeHtmlPage() {
     //Localize by replacing __MSG_***__ meta tags
     var objects = document.getElementsByTagName('html');
@@ -15,20 +25,10 @@ function localizeHtmlPage() {
     }
 }
 localizeHtmlPage();
+
 $(document).ready(function () {
     $("#input").cleditor();
 });
-var mySigns = []
-
-if (localStorage.getItem("signs"))
-    JSON.parse(localStorage.getItem("signs"));
-else {
-    chrome.storage.sync.get("sings", function (items) {
-        console.log(items)
-    })
-}
-
-var table;
 
 $("#createNewBtn").click(function () {
     if (document.getElementById('newSignBox').style.height == '0px') {
@@ -57,18 +57,15 @@ $("#addSigns").click(function () {
     }
 
     mySigns.push(myAdded);
-    localStorage.setItem("signs", JSON.stringify(mySigns));
-
-    var mn = $("#inpName").val();
-    var tu = 0;
-    var idA = mySigns.length - 1;
-    var bt = '<button id="delete" data-id="' + idA + '"> Borrar </button>';
-    var myJ = [mn, tu, bt]
+    saveInLocal(mySigns);
+    saveInGoogle();
+    
+    myJ = [ 
+            $("#inpName").val(),
+            0,
+            '<button id="delete" data-id="' + (mySigns.length - 1) + '"> Borrar </button>'
+          ];    
     table.row.add(myJ).draw();
-
-    chrome.storage.sync.set(localStorage, function () {
-        console.log("Saved in google cloud too.")
-    });
 
     $("#inpName").val("");
     $("#input").cleditor()[0].clear()
@@ -82,10 +79,11 @@ $(document).ready(function () {
     });
 
     for (var roow in mySigns) {
-        var mn = mySigns[roow].name;
-        var tu = mySigns[roow].used;
-        var bt = '<button id="delete" data-id="' + roow + '"> Borrar </button>';
-        var myJ = [mn, tu, bt]
+        myJ     = [ 
+                    mySigns[roow].name,
+                    mySigns[roow].used,
+                    '<button id="delete" data-id="' + (mySigns.length - 1) + '"> Borrar </button>'
+                  ];
         table.row.add(myJ).draw();
     };
 });
@@ -98,5 +96,6 @@ $("#dtable").on("click", "#delete", (function () {
     };
     table.row($(this).parents('tr')).remove().draw();
     mySigns = newJs;
-    localStorage.setItem("signs", JSON.stringify(mySigns));
+    saveInLocal(mySigns);
+    saveInGoogle();
 }));

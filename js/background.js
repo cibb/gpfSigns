@@ -1,5 +1,3 @@
-var mySigns = [];
-
 function saveInLocal(datas)
 {
     if(typeof datas == "string")
@@ -41,12 +39,10 @@ function getFromGoogle(){
         return Aux;
 }
 
+var mySigns = [];
 mySigns = getFromGoogle();
 if(!mySigns)
     mySigns = getFromLocal();
-
-if(!mySigns)
-    mySigns = [];
 
 chrome.storage.onChanged.addListener(function(changes,areaName){
     if(areaName == 'sync')

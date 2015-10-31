@@ -1,5 +1,3 @@
-var mySigns;
-
 function localizeHtmlPage() {
     //Localize by replacing __MSG_***__ meta tags
     var objects = document.getElementsByTagName('html');
@@ -17,13 +15,6 @@ function localizeHtmlPage() {
     }
 }
 localizeHtmlPage();
-
-if (!(mySigns = getFromLocal()))
-    if(!(mySigns = getFromGoogle())){
-        mySigns = [];
-    }else{
-        saveInLocal(mySigns);
-    }
 
 if (mySigns.length < 1) {
     $("#exe").hide();

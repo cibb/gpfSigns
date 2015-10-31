@@ -1,13 +1,5 @@
-var mySigns;
 var table;
-
-if (!(mySigns = getFromLocal()))
-    if(!(mySigns = getFromGoogle())){
-        mySigns = [];
-    }else{
-        saveInLocal(mySigns);
-    }
-    
+   
 function localizeHtmlPage() {
     //Localize by replacing __MSG_***__ meta tags
     var objects = document.getElementsByTagName('html');

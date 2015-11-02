@@ -124,6 +124,7 @@
     </style>
     <script src="js/prefixfree.min.js"></script>
 </head>
+
 <body>
     <h1>__MSG_name__ ~ __MSG_config_page__</h1>
     <main>
@@ -145,7 +146,7 @@
             <div id="newSignBox" style="height: 0px;">
                 <div id="taIn">
                     __MSG_shortName__:
-                    <input type="text" id="inpName">
+                    <input type="text" id="inpName" maxlength="30" placeholder="__MSG_shortName__" required="required">
                 </div>
                 <div id="taIn">
                     __MSG_display__:
@@ -167,7 +168,7 @@
                         <tr>
                             <th>__MSG_shortName__</th>
                             <th>__MSG_timeUsed__</th>
-                            <th>Actions</th>
+                            <th>__MSG_actions__</th>
                         </tr>
                     </thead>
 
@@ -175,10 +176,9 @@
                         <tr>
                             <th>__MSG_shortName__</th>
                             <th>__MSG_timeUsed__</th>
-                            <th>Actions</th>
+                            <th>__MSG_actions__</th>
                         </tr>
                     </tfoot>
-
                     <tbody>
                     </tbody>
                 </table>
@@ -196,7 +196,7 @@
         </section>
 
         <section id="content4">
-            <p>Cooming soon</p>
+            <p>__MSG_coomingsoon__</p>
         </section>
 
     </main>

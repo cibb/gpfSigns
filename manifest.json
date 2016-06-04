@@ -1,12 +1,12 @@
 {
-  "manifest_version": 2,  
+  "manifest_version": 2,
   "name": "__MSG_name__",
   "short_name": "GPFSigns",
   "description": "__MSG_descr__",
   "version": "1.2",
-  "options_page":"config.html",  
+  "options_page":"config.html",
   "content_scripts": [
-  {     
+  {
       "matches": ["https://productforums.google.com/*"],
       "js": ["js/content.js"]
   }],
@@ -21,5 +21,5 @@
       "128": "images/128.png",
       "16": "images/16.png"
    },
-   "permissions": [ "notifications", "storage", "alarms", "https://productforums.google.com/*", "https://fonts.googleapis.com/*" ]
+   "permissions": [ "storage", "https://productforums.google.com/*", "https://fonts.googleapis.com/*" ]
 }

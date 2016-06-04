@@ -16,8 +16,7 @@ function localizeHtmlPage() {
 }
 localizeHtmlPage();
 
-var AuxLocal = JSON.parse(localStorage.getItem("signs"));
-if (typeof localStorage.signs == 'undefined' || AuxLocal.length < 1) {
+if (mySigns.length < 1) {
     $("#exe").hide();
     $("#lstSigns").hide();
     $("#msg").html(chrome.i18n.getMessage("error_no_signs"));
@@ -27,11 +26,11 @@ if (typeof localStorage.signs == 'undefined' || AuxLocal.length < 1) {
         });
     });
 } else {
-    for (var row in AuxLocal) {
+    for (var row in mySigns) {
         var select = document.getElementById('lstSigns');
         var opt = document.createElement('option');
         opt.value = row;
-        opt.innerHTML = AuxLocal[row].name;
+        opt.innerHTML = mySigns[row].name;
         select.appendChild(opt);
     }
 }
@@ -47,19 +46,19 @@ document.getElementById("exe").addEventListener("click", function () {
             return;
         }
 
-        if (typeof AuxLocal[$("#lstSigns").children(":selected").attr("value")] == 'undefined') {
+        if (typeof mySigns[$("#lstSigns").children(":selected").attr("value")] == 'undefined') {
             alert(chrome.i18n.getMessage("error_haha"));
             return;
         }
-        var sitem = AuxLocal[$("#lstSigns").children(":selected").attr("value")];
-        AuxLocal[$("#lstSigns").children(":selected").attr("value")].used++;
+        var sitem = mySigns[$("#lstSigns").children(":selected").attr("value")];
+        mySigns[$("#lstSigns").children(":selected").attr("value")].used++;
         chrome.tabs.sendMessage(tab[0].id, {
             type: "addSign",
             tab: tab[0],
             text: sitem.message,
             "post": sitem.post
         });
-        localStorage.setItem("signs", JSON.stringify(AuxLocal))
+        localStorage.setItem("signs", JSON.stringify(mySigns))
     })
 });
 

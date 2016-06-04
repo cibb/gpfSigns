@@ -1,78 +1,81 @@
 {
-   "name": {
-      "message": "GPF Signs"
-   },
-   "descr": {
-      "message": "This extension allows you to add signs in the GPF fast and easy."
-   },
+    "name": {
+        "message": "GPF Signs"
+    },
+    "descr": {
+        "message": "This extension allows you to add signs in the GPF fast and easy."
+    },
 
-	"my_links" : {
-		"message" : "My Links"
-	},
-	"add_sign" : {
-		"message" : "Insert Sign"
-	},	
-	"config" : {
-		"message" : "Config"
-	},	
-  "config_page" : {
-    "message" : "Config Page"
-  },
-  "coomingsoon" : {
-    "message" : "Coming Soon"
-  },  
-  "createNew": {
-    "message" : "Create new"
-  },   
-  "shortName":{
-    "message" : "Short name"
-  },
-  "display":{
-    "message" : "This will show"
-  },
-  "afterText":{
-    "message":"After the text written"
-  },  
-  "beforeText":{
-    "message":"Before the text written"
+    "my_links": {
+        "message": "My Links"
     },
-  "addSignToList":{
-    "message":"Save"
+    "add_sign": {
+        "message": "Insert Sign"
     },
-  "savedSignDone":{
-    "message":"Your sign has been saved"
-  },
-  "yourSigns":{
-    "message":"Your signs"
-  },
-  "signs":{
-      "message": "Signs"
+    "config": {
+        "message": "Config"
     },
-  "links":{
-      "message": "Links"
-    },    
-  "thanks":{
-      "message": "Thanks"
-    },    
-  "thanksText" :{
-    "message" : "- Thanks to <a href=\"http://avm99963.tk/\">avm99963</a> for his support.</p><p>- Thanks to all the <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> group for testing the app and use it."
-  },
-   "error_no_gpf_tab": {
-   		"message" : "Oops! Yo can't insert a sign into the actual tab! Please, go to a GPF tab!"
-   },
-    "error_no_signs":{
-   		"message" : "You dont have any signs yet. Its time to <a id=\"aConf\">create one</a>!"
-   },
-    "error_haha":{
-         "message" : "haha, this option is not available"
-   },
-   "timeUsed":{
-      "message" : "Times used"
-   },
-   "actions":{
-      "message" : "Actions"
-   },  
-   "errorNamelenght" :{
-        "message" : "Oops! You either forgot to insert a name, or it is too long (it must be between 3 and 30 characters long)"
-   }
+    "config_page": {
+        "message": "Config Page"
+    },
+    "coomingsoon": {
+        "message": "Coming Soon"
+    },
+    "createNew": {
+        "message": "Create new"
+    },
+    "shortName": {
+        "message": "Short name"
+    },
+    "display": {
+        "message": "This will show"
+    },
+    "afterText": {
+        "message": "After the text written"
+    },
+    "beforeText": {
+        "message": "Before the text written"
+    },
+    "addSignToList": {
+        "message": "Save"
+    },
+    "savedSignDone": {
+        "message": "Your sign has been saved"
+    },
+    "yourSigns": {
+        "message": "Your signs"
+    },
+    "actions": {
+        "message": "Actions"
+    },
+    "signs": {
+        "message": "Signs"
+    },
+    "links": {
+        "message": "Links"
+    },
+    "thanks": {
+        "message": "Thanks"
+    },
+    "thanksText": {
+        "message": "- Thanks to <a href=\"http://avm99963.tk/\">avm99963</a> for his support.</p><p>- Thanks to all the <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> group for testing the app and use it."
+    },
+    "error_no_gpf_tab": {
+        "message": "Oops! Yo can't insert a sign into the actual tab! Please, go to a GPF tab!"
+    },
+    "error_no_signs": {
+        "message": "You dont have any signs yet. Its time to <a id=\"aConf\">create one</a>!"
+    },
+    "error_haha": {
+        "message": "haha, this option is not available"
+    },
+    "timeUsed": {
+        "message": "Times used"
+    },
+    "actions": {
+        "message": "Actions"
+    },
+    "errorNamelenght": {
+        "message": "Oops! You either forgot to insert a name, or it is too long (it must be between 3 and 30 characters long)"
+    }
 }

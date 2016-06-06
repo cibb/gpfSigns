@@ -71,9 +71,6 @@
     "timeUsed": {
         "message": "Vegades utilitzada"
     },
-    "actions": {
-        "message": "Accions"
-    },
     "errorNamelenght": {
         "message": "Aiix! T'has olvidat de possar un nom o és massa llarg (ha d'estar entre 3 i 30 caràcters)"
     }

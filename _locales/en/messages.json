@@ -72,9 +72,6 @@
     "timeUsed": {
         "message": "Times used"
     },
-    "actions": {
-        "message": "Actions"
-    },
     "errorNamelenght": {
         "message": "Oops! You either forgot to insert a name, or it is too long (it must be between 3 and 30 characters long)"
     }

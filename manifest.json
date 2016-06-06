@@ -3,13 +3,18 @@
   "name": "__MSG_name__",
   "short_name": "GPFSigns",
   "description": "__MSG_descr__",
-  "version": "1.2.1",
+  "version": "2",
   "options_page":"config.html",
   "content_scripts": [
   {
       "matches": ["https://productforums.google.com/*"],
       "js": ["js/content.js"]
   }],
+
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
 
   "default_locale": "es",
 

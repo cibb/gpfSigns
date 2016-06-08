@@ -99,6 +99,10 @@
             border-bottom: 1px solid #fff;
         }
 
+        #createNewBtn {
+            cursor: pointer;
+        }
+
         #tab1:checked ~ #content1,
         #tab2:checked ~ #content2,
         #tab3:checked ~ #content3,
@@ -143,7 +147,7 @@
                 __MSG_createNew__
             </div>
             <div style="clear: both"></div>
-            <div id="newSignBox" style="height: 0px;">
+            <div id="newSignBox" style="display: none;">
                 <div id="taIn">
                     __MSG_shortName__:
                     <input type="text" id="inpName" maxlength="30" placeholder="__MSG_shortName__" required="required">

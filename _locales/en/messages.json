@@ -58,7 +58,7 @@
         "message": "Thanks"
     },
     "thanksText": {
-        "message": "- Thanks to <a href=\"http://avm99963.tk/\">avm99963</a> for his support.</p><p>- Thanks to all the <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> group for testing the app and use it."
+        "message": "- Thanks to <a href=\"http://avm99963.com/\">avm99963</a> for his support.</p><p>- Thanks to all the <a href=\"https://productforums.google.com/forum/#!forum/chrome-es\">Chrome-Es</a> group for testing the app and use it."
     },
     "error_no_gpf_tab": {
         "message": "Oops! Yo can't insert a sign into the actual tab! Please, go to a GPF tab!"

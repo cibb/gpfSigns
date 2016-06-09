@@ -60,7 +60,7 @@
         "message": "Oops! No puedes insertar una firma en esta pesta\u00f1a! Ingresa a una de GPF!"
     },
     "error_no_signs": {
-        "message": "Aun no tiene ninguna firma creada. ¡Es hora de <a id=\"aConf\">crear una</a>!"
+        "message": "Aún no tiene ninguna firma creada. ¡Es hora de <a id=\"aConf\">crear una</a>!"
     },
     "error_haha": {
         "message": "jaja, esa opcion no está disponible"

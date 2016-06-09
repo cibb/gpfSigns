@@ -1,32 +1,39 @@
+/**globals document */
+
 var table;
 
-function localizeHtmlPage() {
-    //Localize by replacing __MSG_***__ meta tags
-    var objects = document.getElementsByTagName('html');
-    for (var j = 0; j < objects.length; j++) {
-        var obj = objects[j];
-
-        var valStrH = obj.innerHTML.toString();
-        var valNewH = valStrH.replace(/__MSG_(\w+)__/g, function (match, v1) {
-            return v1 ? chrome.i18n.getMessage(v1) : "";
+var sync = {
+    get() {
+        return new Promise((resolve, reject) => {
+            chrome.storage.sync.get(null, function (items) {
+                resolve(items.signs ? JSON.parse(items.signs) : []);
+            });
+        });
+    },
+    set(value) {
+        return new Promise((resolve, reject) => {
+            chrome.storage.sync.set({
+                'signs': value
+            }, () => {
+                if (chrome.runtime.lastError) {
+                    return reject('Error al setear firmas ' + chrome.runtime.lastError.message);
+                }
+            });
+            return resolve(true);
         });
 
-        if (valNewH != valStrH) {
-            obj.innerHTML = valNewH;
-        }
     }
-}
-localizeHtmlPage();
+};
 
-chrome.storage.sync.get(null, function (items) {
-    var mySigns = (items.signs ? JSON.parse(items.signs) : []);
+sync.get().then((mySigns) => {
 
     $(document).ready(function () {
         $("#input").cleditor();
     });
 
     $("#createNewBtn").click(evt => {
-        $('#newSignBox').fadeToggle();
+        $('#newSignBox').slideToggle();
+        $('#input').cleditor()[0].refresh(); // al redimensionar, hay que repintar =S
     });
 
     $("#addSigns").click(function () {
@@ -47,9 +54,7 @@ chrome.storage.sync.get(null, function (items) {
 
         mySigns.push(myAdded);
 
-        chrome.storage.sync.set({
-            "signs": JSON.stringify(mySigns)
-        });
+        sync.set(JSON.stringify(mySigns));
 
         myJ = [
             $("#inpName").val(),

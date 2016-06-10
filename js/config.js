@@ -14,10 +14,10 @@ var sync = {
                 'signs': value
             }, () => {
                 if (chrome.runtime.lastError) {
-                    return reject('Error al setear firmas ' + chrome.runtime.lastError.message);
+                    return reject('Error al setear firmas: ' + chrome.runtime.lastError.message);
                 }
+                return resolve(value);
             });
-            return resolve(value);
         });
 
     }
@@ -92,9 +92,12 @@ $(document).ready(() => {
 
         signs.add(myAdded);
 
-        sync.set(signs.json()).then(JSON.parse).then(jUtils.render);
+        sync.set(signs.json())
+            .then(JSON.parse)
+            .then(jUtils.render)
+            .then(() => window.alert(chrome.i18n.getMessage("savedSignDone")))
+            .catch(e => window.alert(e));
 
-        window.alert(chrome.i18n.getMessage("savedSignDone"));
         $("#inpName").val("");
         $("#input").cleditor()[0].clear();
         $('#newSignBox').slideToggle();

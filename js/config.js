@@ -60,10 +60,6 @@ var jUtils = {
         $(".delete").bind("click", jUtils.delete);
         return rows;
     },
-    init() {
-        $("#input").cleditor();
-        $('#dtable').DataTable();
-    },
     delete(event) {
         signs.remove($(this).data('id'));
         sync.set(signs.json()).then(JSON.parse).then(jUtils.render);

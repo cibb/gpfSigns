@@ -1,12 +1,10 @@
 /**globals document */
 
-var table;
-
 var sync = {
     get() {
         return new Promise((resolve, reject) => {
             chrome.storage.sync.get(null, function (items) {
-                resolve(items.signs ? JSON.parse(items.signs) : []);
+                return resolve(items.signs ? JSON.parse(items.signs) : []);
             });
         });
     },
@@ -19,82 +17,91 @@ var sync = {
                     return reject('Error al setear firmas ' + chrome.runtime.lastError.message);
                 }
             });
-            return resolve(true);
+            return resolve(value);
         });
 
     }
 };
 
-sync.get().then((mySigns) => {
+var signs = {
 
-    $(document).ready(function () {
+    data: new Array(),
+    add(sign) {
+        signs.data.push(sign);
+    },
+    remove(id) {
+        signs.data.splice(id, 1);
+    },
+    get() {
+        return signs.data;
+    },
+    init(newsigns) {
+        signs.data = newsigns;
+    },
+    json() {
+        return JSON.stringify(signs.data);
+    }
+}
+
+var jUtils = {
+
+    render(rows) {
+        //[nombre, usado, boton]
+        var $table = $('#dtable').DataTable();
+        $table.rows().remove();
+        for (row in rows) {
+            myJ = [rows[row].name,
+                rows[row].used,
+                '<button class="delete" data-id="' + row + '"> Borrar </button>'
+            ];
+            $table.row.add(myJ);
+        }
+        $table.draw();
+        $(".delete").bind("click", jUtils.delete);
+        return rows;
+    },
+    init() {
         $("#input").cleditor();
-    });
+        $('#dtable').DataTable();
+    },
+    delete(event) {
+        signs.remove($(this).data('id'));
+        sync.set(signs.json()).then(JSON.parse).then(jUtils.render);
+    }
 
-    $("#createNewBtn").click(evt => {
+}
+
+$(document).ready(() => {
+
+    sync.get().then(jUtils.render).then(signs.init);
+
+    $("#createNewBtn").click(() => {
         $('#newSignBox').slideToggle();
         $('#input').cleditor()[0].refresh(); // al redimensionar, hay que repintar =S
     });
 
-    $("#addSigns").click(function () {
-
-        var myBol = !($('#before option:selected').attr('id') == "true")
+    $("#addSigns").click(() => {
 
         if ($("#inpName").val().length < 2 || $("#inpName").val().length > 30) {
-            alert(chrome.i18n.getMessage("errorNamelenght"));
+            window.alert(chrome.i18n.getMessage("errorNamelenght"));
             return;
         }
 
         var myAdded = {
             'name': $("#inpName").val(),
-            'post': myBol,
+            'post': !($('#before option:selected').attr('id') == "true"),
             'used': 0,
             'message': $("#input").val()
         }
 
-        mySigns.push(myAdded);
+        signs.add(myAdded);
 
-        sync.set(JSON.stringify(mySigns));
+        sync.set(signs.json()).then(JSON.parse).then(jUtils.render);
 
-        myJ = [
-            $("#inpName").val(),
-            0,
-            '<button id="delete" data-id="' + (mySigns.length - 1) + '"> Borrar </button>'
-        ];
-        table.row.add(myJ).draw();
-
+        window.alert(chrome.i18n.getMessage("savedSignDone"));
         $("#inpName").val("");
-        $("#input").cleditor()[0].clear()
-
-        alert(chrome.i18n.getMessage("savedSignDone"));
+        $("#input").cleditor()[0].clear();
+        $('#newSignBox').slideToggle();
     });
 
-    $(document).ready(function () {
-        table = $('#dtable').DataTable({
-            "info": false
-        });
-
-        for (var roow in mySigns) {
-            myJ = [
-                mySigns[roow].name,
-                mySigns[roow].used,
-                '<button id="delete" data-id="' + (mySigns.length - 1) + '"> Borrar </button>'
-            ];
-            table.row.add(myJ).draw();
-        };
-    });
-
-    $("#dtable").on("click", "#delete", (function () {
-        var newJs = [];
-        for (var roow in mySigns) {
-            if (roow != $(this).attr("data-id"))
-                newJs.push(mySigns[roow]);
-        };
-        table.row($(this).parents('tr')).remove().draw();
-        mySigns = newJs;
-
-        chrome.storage.sync.set({
-            "signs": JSON.stringify(mySigns)
-        });
-    }));
 });

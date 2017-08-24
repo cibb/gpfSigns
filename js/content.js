@@ -18,7 +18,7 @@ chrome.extension.onMessage.addListener(function (message, sender, sendResponse) 
             }
 
             if (window.hadfield_standalone) {
-                customerName = document.getElementsByClassName("NUXPAI-E-e")[0].getElementsByTagName("span")[0].innerText;
+                customerName = document.getElementsByClassName("BOXPGHD-C-e")[0].getElementsByTagName("span")[0].innerText;
             } else {
                 customerName = document.querySelector("._username span").innerText;
             }
